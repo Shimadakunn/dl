@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @font-face {
+          font-family: 'Akira Bold';
+          src: url('./fonts/Akira Bold.ttf') format('woff');
+      }
+      @font-face {
+          font-family: 'Akira Outline';
+          src: url('./fonts/Akira Outline.ttf') format('woff');
+      }
+      @font-face {
+          font-family: 'Akira Super Bold';
+          src: url('./fonts/Akira Super Bold.ttf') format('woff');
+      }
+      @font-face {
+          font-family: 'Roboto Thin';
+          src: url('./fonts/Roboto-Thin.ttf') format('woff');
+      }
+      *{
+        margin:0 0;
+        padding: 0 0;
+        box-sizing: border-box;
+        cursor: none;
+      }
+      body,#root{
+        font-family: 'Akira Outline';
+        position: relative;
+      }
+      html{
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+      html::-webkit-scrollbar{
+        display: none;
+      }
+    </style>
+    <title>Dounia Gallery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("MbO4swYDQQEn9wQmR");
+      })();
+    </script>
+  </head>
+  <body data-nav = "false">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
