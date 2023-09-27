@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const IconText = styled.div`
     position: absolute;
-    top: 50%;
+    top: 56.03%;
     left: 50%;
     transform: translate(-50%,-50%);
     font-size: 0.25vh;
@@ -11,11 +11,9 @@ const IconText = styled.div`
     font-weight: 900;
     letter-spacing: .1em;
     color: #fff;
-
     opacity: 0;
     transition: opacity 400ms ease;
 `
-
 const Trailer = styled.div`
     background-color: black;
     height: 1.75vh;

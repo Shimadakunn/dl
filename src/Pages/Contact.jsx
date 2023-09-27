@@ -54,15 +54,24 @@ const InfoContainer = styled.div`
         position: absolute;
         top: 10%;
         left: 5%;
+        @media (max-width: 480px) {
+            font-size: 1.5rem;
+        }
     }
     h2{
         position: absolute;
         left: 5%;
         &.Hmail{
             top: 35%;
+            @media (max-width: 480px) {
+                top: 30%;
+            }
         }
         &.Hinsta{
             top: 65%;
+            @media (max-width: 480px) {
+                top: 60%;
+            }
         }
     }
     div{
@@ -71,9 +80,15 @@ const InfoContainer = styled.div`
         margin-top: 10px;
         &.SVGmail{
             top: 40%;
+            @media (max-width: 480px) {
+                top: 35%;
+            }
         }
         &.SVGinsta{
             top: 70%;
+            @media (max-width: 480px) {
+                top: 65%;
+            }
         }
     }
     a{
@@ -85,9 +100,15 @@ const InfoContainer = styled.div`
         text-decoration: none;
         &.mail{
             top: 40%;
+            @media (max-width: 480px) {
+                top: 35%;
+            }
         }
         &.insta{
             top: 70%;
+            @media (max-width: 480px) {
+                top: 65%;
+            }
         }
     }
 `
@@ -104,18 +125,30 @@ const ContactContainer = styled.div`
         position: absolute;
         top: 10%;
         right: 5%;
+        @media (max-width: 480px) {
+            font-size: 1.5rem;
+        }
     }
     h2{
         position: absolute;
         right: 5%;
         &.Hname{
             top: 30%;
+            @media (max-width: 480px) {
+                top: 25%;
+            }
         }
         &.Hmail{
             top: 50%;
+            @media (max-width: 480px) {
+                top: 45%;
+            }
         }
         &.Hmessage{
             top: 70%;
+            @media (max-width: 480px) {
+                top: 65%;
+            }
         }
     }
     input{
@@ -124,14 +157,19 @@ const ContactContainer = styled.div`
         margin-top: 10px;
         width: 40%;
         @media (max-width: 480px) { 
-            width: 80%;
+            width: 75%;
         }
         &.Iname{
             top: 35%;
-            
+            @media (max-width: 480px) {
+                top: 30%;
+            }
         }
         &.Imail{
             top: 55%;
+            @media (max-width: 480px) {
+                top: 50%;
+            }
         }
     }
     textarea{
@@ -142,8 +180,9 @@ const ContactContainer = styled.div`
         width: 40%;
         height: 10%;
         @media (max-width: 480px) { 
-            width: 80%;
+            width: 75%;
             height: 7%;
+            top: 70%;
         }
     }
 `
