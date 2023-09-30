@@ -46,6 +46,13 @@ const Project = styled.div`
         object-fit: cover;
         padding-bottom: 50px;
         @media (max-width: 480px) {padding-bottom: 10px;}
+        filter: blur(4px);
+        opacity: 0;
+        transition: all 0.5s ease-out;
+        &.notloaded{
+            opacity: 1;
+            filter: blur(0px);
+        }
     }
 `
 function Dou() {
@@ -70,131 +77,135 @@ function Dou() {
         window.removeEventListener('scroll', handleScroll); // Remove scroll event listener on component unmount
         };
     }, []);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setLoading(false);
+      }, []);
     return (
         <Main>
             <Title>EGYPTE</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>    
                     <Project className="paysage">
-                        <img src="./img/Egypte/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/0.webp" />
                     </Project>
                     <Project className="paysage">
-                        <img src="./img/Egypte/1.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/1.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/2.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/2.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/3.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/3.webp" />
                     </Project>   
                     <Project className="paysage">
-                        <img src="./img/Egypte/4.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/4.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/5.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/5.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/6.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/6.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/7.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/7.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/8.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/8.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/9.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/9.webp" />
                     </Project>   
                     <Project className="paysage">
-                        <img src="./img/Egypte/10.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/10.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/11.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/11.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/12.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/12.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/13.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/13.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/14.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/14.webp" />
                     </Project>   
                     <Project className="paysage">
-                        <img src="./img/Egypte/15.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/15.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/16.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/16.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/17.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/17.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/18.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/18.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/19.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/19.webp" />
                     </Project>        
                 </div>
             </Lane>
             <Lane className="right">
                 <div ref={el => (divRefs.current[1] = el)}>
                     <Project className="portrait">
-                        <img src="./img/Egypte/20.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/20.webp" />
                     </Project>
                     <Project className="portrait">
-                        <img src="./img/Egypte/21.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/21.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/22.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/22.webp" />
                     </Project>   
                     <Project className="paysage">
-                        <img src="./img/Egypte/23.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/23.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/24.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/24.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/25.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/25.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/26.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/26.webp" />
                     </Project>   
                     <Project className="paysage">
-                        <img src="./img/Egypte/27.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/27.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/28.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/28.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/29.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/29.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/30.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/30.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/31.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/31.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/32.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/32.webp" />
                     </Project>   
                     <Project className="paysage">
-                        <img src="./img/Egypte/33.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/33.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/34.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/34.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/35.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/35.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/36.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/36.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/37.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/37.webp" />
                     </Project>   
                     <Project className="portrait">
-                        <img src="./img/Egypte/38.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/38.webp" />
                     </Project>     
                 </div>
             </Lane>

@@ -46,6 +46,13 @@ const Project = styled.div`
         object-fit: cover;
         padding-bottom: 50px;
         @media (max-width: 480px) {padding-bottom: 10px;}
+        filter: blur(4px);
+        opacity: 0;
+        transition: all 0.5s ease-out;
+        &.notloaded{
+            opacity: 1;
+            filter: blur(0px);
+        }
     }
 `
 function Dou() {
@@ -70,45 +77,49 @@ function Dou() {
         window.removeEventListener('scroll', handleScroll); // Remove scroll event listener on component unmount
         };
     }, []);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setLoading(false);
+      }, []);
     return (
         <Main>
             <Title>SYNDA</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>         
                     <Project className="paysage">
-                        <img src="./img/Synda/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/0.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Synda/1.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/1.webp" />
                     </Project>
                     <Project className="paysage">
-                        <img src="./img/Synda/7.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/7.webp" />
                     </Project>
                     <Project className="portrait">
-                        <img src="./img/Synda/2.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/2.webp" />
                     </Project>
                     <Project className="portrait">
-                        <img src="./img/Synda/3.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/3.webp" />
                     </Project>
                     <Project className="paysage">
-                        <img src="./img/Synda/4.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/4.webp" />
                     </Project>
                 </div>
             </Lane>
             <Lane className="right">
                 <div ref={el => (divRefs.current[1] = el)}>
                     <Project className="portrait">
-                        <img src="./img/Synda/6.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/6.webp" />
                     </Project>
                     <Project className="paysage">
-                        <img src="./img/Synda/5.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/5.webp" />
                     </Project>
                     
                     <Project className="portrait">
-                        <img src="./img/Synda/8.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/8.webp" />
                     </Project>
                     <Project className="portrait">
-                        <img src="./img/Synda/9.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/9.webp" />
                     </Project>
                 </div>
             </Lane>

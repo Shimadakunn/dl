@@ -1,5 +1,6 @@
 import React,{ useEffect, useRef,useState} from 'react'
 import { useNavigate,useLocation } from 'react-router-dom'
+import { Ring } from '@uiball/loaders'
 import styled from "styled-components";
 
 const Main = styled.div`
@@ -9,6 +10,12 @@ const Main = styled.div`
     display: flex;
     overflow: hidden;
     position: relative;
+    & .loading{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
 `
 const Title = styled.h1`
     pointer-events: none;
@@ -24,6 +31,13 @@ const Title = styled.h1`
     transform: translate(-50%,-50%);
     @media (max-width: 480px) {
         font-size: 2.9rem;
+    }
+    filter: blur(4px);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    &.notloaded{
+        opacity: 1;
+        filter: blur(0px);
     }
 `
 const Lane = styled.div`
@@ -48,6 +62,13 @@ const Project = styled.div`
         object-fit: cover;
         padding-bottom: 50px;
         @media (max-width: 480px) {padding-bottom: 10px;}
+        filter: blur(4px);
+        opacity: 0;
+        transition: all 0.5s ease-out;
+        &.notloaded{
+            opacity: 1;
+            filter: blur(0px);
+        }
     }
 `
 function Gallery() {
@@ -63,9 +84,6 @@ function Gallery() {
             const posFinal = bodyHeight - divHeight;
             const factor = posFinal/(bodyHeight - pageHeight)*scrollPosition;
             div.style.transform = `translateY(${factor}px)`;
-            console.log("body height "+bodyHeight);
-            console.log("div height "+divHeight);
-            console.log("pos final "+posFinal);
         });
         };
         window.addEventListener('scroll', handleScroll); // Add scroll event listener
@@ -73,34 +91,51 @@ function Gallery() {
         window.removeEventListener('scroll', handleScroll); // Remove scroll event listener on component unmount
         };
     }, []);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        // const timer = setTimeout(() => {
+            // setLoading(false);
+        // }, 1000);
+        // return () => clearTimeout(timer);
+        setLoading(false);
+      }, []);
     return (
         <Main>
-            <Title>GALLERY</Title>
+            {/* {loading && (
+                <div className="loading">
+                    <Ring 
+                    size={150}
+                    lineWeight={5}
+                    speed={2} 
+                    color="pink" 
+                    />
+                </div>)} */}
+            <Title className={loading?"":"notloaded"}>GALLERY</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>
                     <Project className="portraitBis interactable" onClick={() => {navigate("/anjeli");}}>
-                        <img src="./img/Anjeli/4.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Anjeli/4.webp" />
                     </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/doueva");}}>
-                        <img src="./img/Dou Eva/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Dou Eva/0.webp" />
                     </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/douwhite");}}>
-                        <img src="./img/Dounia White/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Dounia White/0.webp" />
                     </Project>
                     <Project className="portrait interactable" onClick={() => {navigate("/egypte");}}>
-                        <img src="./img/Egypte/5.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Egypte/5.webp" />
                     </Project>
                     <Project className="portraitBis interactable" onClick={() => {navigate("/evablack");}}>
-                        <img src="./img/Eva Black/1.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Eva Black/1.webp" />
                     </Project>
                     <Project className="portraitBis interactable" onClick={() => {navigate("/evaclem");}}>
-                        <img src="./img/Eva Clem/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Eva Clem/0.webp" />
                     </Project>
                     <Project className="portraitBis interactable" onClick={() => {navigate("/evaclem2");}}>
-                        <img src="./img/Eva Clem 2/5.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Eva Clem 2/5.webp" />
                     </Project>
                     <Project className="portrait interactable" onClick={() => {navigate("/sarah");}}>
-                        <img src="./img/Sarah/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Sarah/0.webp" />
                     </Project>
                     
                 </div>
@@ -108,22 +143,22 @@ function Gallery() {
             <Lane className="right">
                 <div ref={el => (divRefs.current[1] = el)}>
                     <Project className="portrait interactable" onClick={() => {navigate("/evawhite");}}>
-                        <img src="./img/Eva White/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Eva White/0.webp" />
                     </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/evacyborg");}}>
-                        <img src="./img/Eva Cyborg/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Eva Cyborg/0.webp" />
                     </Project>
                     <Project className="portrait interactable" onClick={() => {navigate("/evawitch");}}>
-                        <img src="./img/Eva Witch/1.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Eva Witch/1.webp" />
                     </Project>
                     <Project className="portraitBis interactable" onClick={() => {navigate("/pomme");}}>
-                        <img src="./img/Pomme/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/0.webp" />
                     </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/synda");}}>
-                        <img src="./img/Synda/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Synda/0.webp" />
                     </Project>
                     <Project className="portrait">
-                        <img src="./img/Unborn/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Unborn/0.webp" />
                     </Project>
                 </div>
             </Lane>

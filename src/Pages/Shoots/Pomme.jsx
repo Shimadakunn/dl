@@ -46,6 +46,13 @@ const Project = styled.div`
         object-fit: cover;
         padding-bottom: 50px;
         @media (max-width: 480px) {padding-bottom: 10px;}
+        filter: blur(4px);
+        opacity: 0;
+        transition: all 0.5s ease-out;
+        &.notloaded{
+            opacity: 1;
+            filter: blur(0px);
+        }
     }
 `
 function Dou() {
@@ -70,59 +77,63 @@ function Dou() {
         window.removeEventListener('scroll', handleScroll); // Remove scroll event listener on component unmount
         };
     }, []);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setLoading(false);
+      }, []);
     return (
         <Main>
             <Title>POMME</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>     
                     <Project className="portrait">
-                        <img src="./img/Pomme/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/0.webp" />
                     </Project>     
                     <Project className="portrait">
-                        <img src="./img/Pomme/1.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/1.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/2.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/2.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/3.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/3.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/4.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/4.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/5.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/5.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/6.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/6.webp" />
                     </Project>      
                 </div>
             </Lane>
             <Lane className="right">
                 <div ref={el => (divRefs.current[1] = el)}>
                     <Project className="portrait">
-                        <img src="./img/Pomme/7.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/7.webp" />
                     </Project>
                     <Project className="portrait">
-                        <img src="./img/Pomme/8.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/8.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/9.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/9.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/10.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/10.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/11.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/11.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/12.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/12.webp" />
                     </Project>  
                     <Project className="portrait">
-                        <img src="./img/Pomme/13.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/13.webp" />
                     </Project> 
                     <Project className="portrait">
-                        <img src="./img/Pomme/14.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Pomme/14.webp" />
                     </Project> 
                 </div>
             </Lane>
