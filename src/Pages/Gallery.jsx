@@ -93,23 +93,10 @@ function Gallery() {
     }, []);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        // const timer = setTimeout(() => {
-            // setLoading(false);
-        // }, 1000);
-        // return () => clearTimeout(timer);
         setLoading(false);
       }, []);
     return (
         <Main>
-            {/* {loading && (
-                <div className="loading">
-                    <Ring 
-                    size={150}
-                    lineWeight={5}
-                    speed={2} 
-                    color="pink" 
-                    />
-                </div>)} */}
             <Title className={loading?"":"notloaded"}>GALLERY</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>

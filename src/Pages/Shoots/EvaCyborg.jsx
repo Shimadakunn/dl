@@ -90,9 +90,6 @@ function Dou() {
                         <img className={loading?"":"notloaded"} src="./img/Eva Cyborg/0.webp" />
                     </Project>     
                     <Project className="portrait">
-                        <img className={loading?"":"notloaded"} src="./img/Eva Cyborg/1.webp" />
-                    </Project> 
-                    <Project className="portrait">
                         <img className={loading?"":"notloaded"} src="./img/Eva Cyborg/2.webp" />
                     </Project> 
                     <Project className="portrait">
