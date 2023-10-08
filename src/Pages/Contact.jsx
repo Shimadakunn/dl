@@ -225,7 +225,7 @@ function Contact() {
         <InfoContainer>
             <h1>Get in touch</h1>
             <h2 className="Hmail">Write me</h2>
-            <a href="mailto:example@example.com" className = "mail interactable">limamdounia75@gmail.com</a>
+            <a href="mailto:example@example.com" className = "mail interactable">douniaphotographer@gmail.com</a>
             <div className = "SVGmail"><Mail fill="#FF69B4" width="17.5"/></div>
             <h2 className = "Hinsta">Follow me</h2>
             <a href="https://www.instagram.com/yakamuzoseiya"  target="_blank" className = "insta interactable">Instagram</a>
