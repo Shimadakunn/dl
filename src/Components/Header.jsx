@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate,useLocation} from 'react-router-dom';
 import styled from "styled-components";
+import { ArrowLeftToLine } from 'lucide-react';
 
 const Head = styled.header`
   height: 5vh;
@@ -73,6 +74,23 @@ const America = styled.h1`
     -webkit-text-stroke: 1px black;
     text-stroke: 1px black;
 `
+const Return = styled.div`
+position: absolute;
+left: 0;
+margin-left: 2rem;
+font-family: Akira Bold;
+color: #FF69B4;
+width: auto;
+@media (max-width: 480px) {
+  font-size: 0.5rem;
+  right: 0%;
+  margin-left: 0rem;
+  left: 0;
+  position: absolute;
+  width: 5%;
+  scale: 0.5;
+}
+`
 const Menu = styled.div`
     
     position: absolute;
@@ -88,6 +106,7 @@ const Menu = styled.div`
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { pathname } = useLocation();
   useEffect(() => {
     document.documentElement.scrollTo({
@@ -99,14 +118,18 @@ function Header() {
   return (
     <Head>
       <VisibleMenu>
-        <Akira className="interactable" onClick={() => {document.body.dataset.nav = "false";navigate("/");}}>DOUNIA 00</Akira>
+        <Return>
+        {location.pathname === '/' || location.pathname === '/gallery' || location.pathname === '/contact'? null : (
+          <ArrowLeftToLine className="interactable" onClick={() => {navigate("/gallery");}}/>)}
+        </Return>
+        <Akira className="interactable" onClick={() => {document.body.dataset.nav = "false";navigate("/");}}>DOUNIA LIMAM</Akira>
         <Menu className="interactable" onClick={() => {document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";}}>
           Menu
         </Menu>
       </VisibleMenu>
       <UnvisibleMenu>
+        <div className="interactable" onClick={() => {document.body.dataset.nav = "false";navigate("/");}}>Home</div>
         <div className="interactable" onClick={() => {document.body.dataset.nav = "false";navigate("/gallery");}}>Gallery</div>
-        <div className="interactable" onClick={() => {document.body.dataset.nav = "false";navigate("/pricing");}}>Pricing</div>
         <div className="interactable" onClick={() => {document.body.dataset.nav = "false";navigate("/contact");}}>Contact</div>
       </UnvisibleMenu>
     </Head>

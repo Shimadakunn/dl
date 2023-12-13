@@ -97,17 +97,23 @@ function Gallery() {
       }, []);
     return (
         <Main>
-            <Title className={loading?"":"notloaded"}>GALLERY</Title>
+            {/* <Title className={loading?"":"notloaded"}>GALLERY</Title> */}
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>
-                    <Project className="portraitBis interactable" onClick={() => {navigate("/anjeli");}}>
-                        <img className={loading?"":"notloaded"} src="./img/Anjeli/4.webp" />
+                    <Project className="portraitBis interactable" onClick={() => {navigate("/retro");}}>
+                        <img className={loading?"":"notloaded"} src="./img/Retro/1.webp" />
                     </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/doueva");}}>
                         <img className={loading?"":"notloaded"} src="./img/Dou Eva/0.webp" />
                     </Project>
+                    <Project className="portraitBis interactable" onClick={() => {navigate("/anjeli");}}>
+                        <img className={loading?"":"notloaded"} src="./img/Anjeli/4.webp" />
+                    </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/douwhite");}}>
                         <img className={loading?"":"notloaded"} src="./img/Dounia White/0.webp" />
+                    </Project>
+                    <Project className="portrait interactable" onClick={() => {navigate("/ethan");}}>
+                        <img className={loading?"":"notloaded"} src="./img/Ethan/1.webp" />
                     </Project>
                     <Project className="portrait interactable" onClick={() => {navigate("/egypte");}}>
                         <img className={loading?"":"notloaded"} src="./img/Egypte/5.webp" />
@@ -129,6 +135,9 @@ function Gallery() {
             </Lane>
             <Lane className="right">
                 <div ref={el => (divRefs.current[1] = el)}>
+                    <Project className="portrait interactable" onClick={() => {navigate("/moops");}}>
+                        <img className={loading?"":"notloaded"} src="./img/Moops/1.webp" />
+                    </Project>
                     <Project className="portrait interactable" onClick={() => {navigate("/evawhite");}}>
                         <img className={loading?"":"notloaded"} src="./img/Eva White/0.webp" />
                     </Project>
@@ -140,6 +149,9 @@ function Gallery() {
                     </Project>
                     <Project className="portraitBis interactable" onClick={() => {navigate("/pomme");}}>
                         <img className={loading?"":"notloaded"} src="./img/Pomme/0.webp" />
+                    </Project>
+                    <Project className="portraitBis interactable" onClick={() => {navigate("/imbh");}}>
+                        <img className={loading?"":"notloaded"} src="./img/Imbh/1.webp" />
                     </Project>
                     <Project className="paysage interactable" onClick={() => {navigate("/synda");}}>
                         <img className={loading?"":"notloaded"} src="./img/Synda/0.webp" />

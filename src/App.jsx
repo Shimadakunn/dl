@@ -18,9 +18,13 @@ import EvaWitch from './Pages/Shoots/EvaWitch.jsx'
 import Pomme from './Pages/Shoots/Pomme.jsx'
 import Sarah from './Pages/Shoots/Sarah.jsx'
 import Synda from './Pages/Shoots/Synda.jsx'
+import Moops from './Pages/Shoots/Moops.jsx'
+import Ethan from './Pages/Shoots/Ethan.jsx'
+import Imbh from './Pages/Shoots/Imbh.jsx'
+import Retro from './Pages/Shoots/Retro.jsx'
 
 function App() {
-
+  
   return (
     <Router>
       <Header />
@@ -42,6 +46,10 @@ function App() {
         <Route path="/pomme" element={<Pomme />} />
         <Route path="/sarah" element={<Sarah />} />
         <Route path="/synda" element={<Synda />} />
+        <Route path="/moops" element={<Moops />} />
+        <Route path="/ethan" element={<Ethan />} />
+        <Route path="/imbh" element={<Imbh />} />
+        <Route path="/retro" element={<Retro />} />
       </Routes>
     </Router>
   )

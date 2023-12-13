@@ -83,7 +83,6 @@ function Dou() {
       }, []);
     return (
         <Main>
-            <Title>DOU EVA</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>    
                     <Project className="paysage">

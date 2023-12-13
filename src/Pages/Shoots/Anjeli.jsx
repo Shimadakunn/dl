@@ -83,7 +83,6 @@ function Anjeli() {
       }, []);
     return (
         <Main>
-            <Title>ANJELI</Title>
             <Lane className="left">
                 <div ref={el => (divRefs.current[0] = el)}>
                     <Project className="portraitBis">
@@ -103,13 +102,10 @@ function Anjeli() {
             <Lane className="right">
                 <div ref={el => (divRefs.current[1] = el)}>
                     <Project className="paysage">
-                        <img className={loading?"":"notloaded"} src="./img/Anjeli/0.webp" />
+                        <img className={loading?"":"notloaded"} src="./img/Anjeli/8.webp" />
                     </Project>
                     <Project className="portrait">
                         <img className={loading?"":"notloaded"} src="./img/Anjeli/2.webp" />
-                    </Project>
-                    <Project className="paysage">
-                        <img className={loading?"":"notloaded"} src="./img/Anjeli/8.webp" />
                     </Project>
                     <Project className="paysage">
                         <img className={loading?"":"notloaded"} src="./img/Anjeli/7.webp" />
